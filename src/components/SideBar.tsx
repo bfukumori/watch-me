@@ -1,8 +1,8 @@
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { api } from '../services/api';
 import '../styles/sidebar.scss';
-import { Button } from './Button';
+import { MemoizedButton } from './Button';
 
 interface GenreResponseProps {
   id: number;
@@ -24,9 +24,9 @@ export function SideBar({ selectedGenreId, setSelectedGenreId }: SidebarProps) {
     });
   }, []);
 
-  function handleClickButton(id: number) {
-    setSelectedGenreId(id);
-  }
+  const handleClickButton = useCallback((id: number) => {
+    setSelectedGenreId(id)
+  }, [])
 
   return (
     <nav className="sidebar">
@@ -34,7 +34,7 @@ export function SideBar({ selectedGenreId, setSelectedGenreId }: SidebarProps) {
 
       <div className="buttons-container">
         {genres.map(genre => (
-          <Button
+          <MemoizedButton
             key={String(genre.id)}
             title={genre.title}
             iconName={genre.name}

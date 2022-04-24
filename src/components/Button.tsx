@@ -1,7 +1,7 @@
 import { Icon } from './Icon';
 
 import '../styles/button.scss';
-import { ButtonHTMLAttributes } from 'react';
+import { ButtonHTMLAttributes, memo } from 'react';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   title: string;
@@ -17,3 +17,9 @@ export function Button({ iconName, title, selected, ...rest }: ButtonProps) {
     </button>
   );
 }
+
+function buttonPropsAreEqual(prevButton: ButtonProps, nextButton: ButtonProps) {
+  return prevButton.selected === nextButton.selected;
+}
+
+export const MemoizedButton = memo(Button, buttonPropsAreEqual);
