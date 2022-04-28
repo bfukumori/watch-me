@@ -37,7 +37,7 @@
 
 ## About
 
-💲 watch-me - app for list movies.
+🎬 watch-me - app for list movies.
 
 Project developed during the Ignite ReactJS course from [Rocketseat](https://www.rocketseat.com.br/ignite).
 
