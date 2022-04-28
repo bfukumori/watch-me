@@ -65,7 +65,7 @@ In addition, it is good to have an editor to work with the code like [VSCode] (h
 $ git clone git@github.com:bfukumori/watch-me.git
 
 # Access the project folder in your terminal
-$ cd dtmoney
+$ cd watch-me
 
 # Install the dependencies
 $ npm install
